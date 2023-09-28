@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+.html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.top_header {
+    width: 80%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-between;
+}
+
+.top_header .logo {
+    height: 80px;
+    width: 120px;
+    background: url('./logo.png');
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.top_header .nav {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.top_header .nav_item {
+    cursor: pointer;
+}
+
+.top_header .nav_item:hover {
+    font-weight: 600;
+}
+
+.hero {
+    height: 400px;
+    width: calc(100% - 200px);
+    background: #ecd9dd;
+    display: flex;
+    padding: 100px 100px;
+}
+
+.hero .left_container {
+    height: 100%;
+    width: 60%;
+}
+
+.hero .right_container {
+    height: 100%;
+    width: 40%;
+}
+
+.hero .hero_bg {
+    background: url('../assets/career.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    text-align: left;
+    font-size: 50px;
+    color: #392e4a;
+}
+
+.section_main {
+    width: calc(100% - 200px);
+    background: #ede7e1;
+    padding: 100px 100px;
+}
+
+.section_title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    color: #392e4a;
+}
+
+.section_subtitle {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.category_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category_list .category_item .icon {
+    height: 70px;
+    width: 70px;
+    background: #392e4a;
+    margin: 0 auto 20px;
+
+}
+
+.category_list .category_item {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.category_list .category_item .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #392e4a;
+}
+
+.category_list .category_item .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #392e4a;
+}
+
+.category_list .category_item .icon {
+    background: url('../assets/menu.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.job_list {}
+
+
+.job_list .job_item {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.job_list .job_item {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+
+.job_list .job_item .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    width: calc(100% - 70px);
+    padding: 0 50px;
+}
+
+.job_list .job_item .top {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.job_list .job_item .bottom {
+    display: flex;
+    justify-content: space-between;
+    background: #ecd9dd;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.job_list .job_item .icon {
+    height: 100px;
+    width: 100px;
+    background: url('../assets/menu.png');
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.job_list .job_item .title {
+    text-align: left;
+}
+
+.job_list .job_item .title_ {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #392e4a;
+}
+
+.trainings_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.trainings_list .trainings_item {
+    width: 300px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding-bottom: 70px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.trainings_list .trainings_item:hover {
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.trainings_list .trainings_item .inner {
+    padding: 10px 20px 0;
+}
+
+.trainings_list .trainings_item .image {
+    height: 200px;
+    background: url('./close-up-briefcase.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.trainings_list .trainings_item .title {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #392e4a;
+}
+
+.trainings_list .trainings_item .description {
+    font-size: 12px;
+    color: #043b5c;
+}
+
+.trainings_list .trainings_item .details {
+    width: calc(100% - 20px);
+    justify-content: space-between;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.trainings_list .trainings_item .duration {
+    font-size: 12px;
+    color: #043b5c;
+}
+
+.trainings_list .trainings_item .price {
+    font-size: 15px;
+    color: #e33d94;
+    font-weight: 800;
+}

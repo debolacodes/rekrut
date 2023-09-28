@@ -1,0 +1,212 @@
+[
+    {
+        "job_title": "Software Engineer",
+        "company": "TechCorp",
+        "location": "San Francisco, CA",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Data Analyst",
+        "company": "Data Insights Inc.",
+        "location": "New York, NY",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Digital Marketing Specialist",
+        "company": "MarketingPros",
+        "location": "Los Angeles, CA",
+        "Type": "Freelance",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Nurse Practitioner",
+        "company": "City Hospital",
+        "location": "Chicago, IL",
+        "Type": "Full-time",
+        "experience": "5+ years"
+    },
+    {
+        "job_title": "Financial Analyst",
+        "company": "Finance Solutions Ltd.",
+        "location": "Houston, TX",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Mechanical Engineer",
+        "company": "Mechatronix",
+        "location": "Seattle, WA",
+        "Type": "Hybrid",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Customer Support Specialist",
+        "company": "SupportHub",
+        "location": "Boston, MA",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Elementary School Teacher",
+        "company": "Bright Minds Academy",
+        "location": "Denver, CO",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Retail Sales Associate",
+        "company": "FashionEmporium",
+        "location": "Miami, FL",
+        "Type": "Part-time",
+        "experience": "1+ year"
+    },
+    {
+        "job_title": "Hotel Front Desk Clerk",
+        "company": "Sunset Resorts",
+        "location": "Orlando, FL",
+        "Type": "Full-time",
+        "experience": "1+ year"
+    },
+    {
+        "job_title": "HR Manager",
+        "company": "HRPro Inc.",
+        "location": "Dallas, TX",
+        "Type": "Full-time",
+        "experience": "5+ years"
+    },
+    {
+        "job_title": "Graphic Designer",
+        "company": "CreatiDesign",
+        "location": "San Diego, CA",
+        "Type": "Freelance",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Manufacturing Technician",
+        "company": "TechMakers",
+        "location": "Detroit, MI",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Biomedical Scientist",
+        "company": "BioTech Labs",
+        "location": "Philadelphia, PA",
+        "Type": "Full-time",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Agricultural Specialist",
+        "company": "FarmLife Co.",
+        "location": "Kansas City, MO",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Construction Project Manager",
+        "company": "BuildIt Inc.",
+        "location": "Atlanta, GA",
+        "Type": "Full-time",
+        "experience": "5+ years"
+    },
+    {
+        "job_title": "Legal Counsel",
+        "company": "LawFirm LLP",
+        "location": "Washington, D.C.",
+        "Type": "Full-time",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Media Producer",
+        "company": "MediaWorks",
+        "location": "San Jose, CA",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Delivery Driver",
+        "company": "Speedy Logistics",
+        "location": "Phoenix, AZ",
+        "Type": "Part-time",
+        "experience": "1+ year"
+    },
+    {
+        "job_title": "Real Estate Agent",
+        "company": "Dream Homes Realty",
+        "location": "Nashville, TN",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Telecommunications Engineer",
+        "company": "TeleComTech",
+        "location": "Raleigh, NC",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Pharmaceutical Researcher",
+        "company": "PharmaGen Inc.",
+        "location": "Minneapolis, MN",
+        "Type": "Full-time",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Nonprofit Program Manager",
+        "company": "Hope Foundation",
+        "location": "Portland, OR",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Government Policy Analyst",
+        "company": "GovSolutions",
+        "location": "Salt Lake City, UT",
+        "Type": "Full-time",
+        "experience": "4+ years"
+    },
+    {
+        "job_title": "Insurance Agent",
+        "company": "SecureInsure",
+        "location": "Indianapolis, IN",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Energy Engineer",
+        "company": "EcoPower Inc.",
+        "location": "Austin, TX",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Environmental Scientist",
+        "company": "EcoSolutions",
+        "location": "Denver, CO",
+        "Type": "Full-time",
+        "experience": "2+ years"
+    },
+    {
+        "job_title": "Sports Coach",
+        "company": "SportsElite",
+        "location": "San Diego, CA",
+        "Type": "Freelance",
+        "experience": "5+ years"
+    },
+    {
+        "job_title": "Fashion Designer",
+        "company": "TrendyThreads",
+        "location": "Los Angeles, CA",
+        "Type": "Full-time",
+        "experience": "3+ years"
+    },
+    {
+        "job_title": "Art Curator",
+        "company": "Gallery Artistry",
+        "location": "New York, NY",
+        "Type": "Full-time",
+        "experience": "4+ years"
+    }
+]
