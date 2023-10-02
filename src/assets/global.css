@@ -59,10 +59,15 @@
 }
 
 .hero .hero_bg {
-    background: url('../assets/career.svg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.hero .hero_bg img {
+    background: #e33d94;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero h1 {
@@ -73,7 +78,7 @@
 
 .section_main {
     width: calc(100% - 200px);
-    background: #ede7e1;
+    background: #fff;
     padding: 100px 100px;
 }
 
@@ -107,8 +112,10 @@
 .category_list .category_item {
     margin: 20px;
     padding: 20px;
+    min-width: 300px;
     border-radius: 20px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: solid 1px #dcdde155;
     cursor: pointer;
 }
 
@@ -141,11 +148,10 @@
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.job_list .job_item {
-    margin-bottom: 30px;
+    border: solid 1px #dcdde155;
+    margin: 15px 0;
     cursor: pointer;
+
 }
 
 
@@ -202,12 +208,13 @@
     width: 300px;
     margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif;
-    padding: 10px 0;
+    padding: 0 0 10px 0;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding-bottom: 70px;
     position: relative;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: solid 1px #dcdde155;
 }
 
 .trainings_list .trainings_item:hover {

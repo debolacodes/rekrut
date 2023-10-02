@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import TopHeader from './components/TopHeader';
+import Hero from './components/Hero';
+import { mainFunctions } from "../providers/MainProvider";
 
 export default function JobList() {
+    const {
+        job,
+        company
+    } = useContext(mainFunctions)
+
     const [jobList, setJobList] = useState(
         [
             {
@@ -216,42 +223,38 @@ export default function JobList() {
             }
         ]
     )
+
+    useEffect(() => {
+        console.log(job, company)
+    }, [job])
     return (
         <div>
             <TopHeader />
-            <div className='hero'>
-                <div className='left_container'>
-                    <h1>Find your dream job</h1>
-                </div>
-                <div className='right_container hero_bg'></div>
-            </div>
+            <Hero
+                title="Find your dream job"
+                bg="job_offers.svg"
+            />
             <div className='section_main'>
                 <div className='section_title'>Technology Jobs</div>
                 <div className='section_subtitle'>We will find the right job that suits you.</div>
                 <div className='job_list'>
-                    {jobList.map((jl, index) => {
+                    {job.map((jl) => {
                         return (
                             <div className='job_item'>
-
-                                {/* job_title": "Art Curator",
-                                "company": "Gallery Artistry",
-                                "location": "New York, NY",
-                                "type": "Full-time",
-                                "experience": "4+ years" */}
                                 <div className='top'>
                                     <div className='icon'></div>
                                     <div className='inner'>
                                         <div className='title'>
-                                            <div className='title_'>{jl.job_title}</div>
+                                            <div className='title_'>{jl.title}</div>
                                             <div className='subtitle'>{jl.location}</div>
                                         </div>
-                                        <div className='comapny'>{jl.company}</div>
+                                        <div className='comapny'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
                                         <div className='type'>{jl.type}</div>
 
                                     </div>
                                 </div>
                                 <div className='bottom'>
-                                    <div className='experience'>{jl.experience}</div>
+                                    <div className='experience'>{jl.experience} Years</div>
                                     <div className='btn'>Apply Now</div>
                                 </div>
                             </div>

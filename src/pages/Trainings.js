@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TopHeader from './components/TopHeader';
+import Hero from './components/Hero';
+import { mainFunctions } from "../providers/MainProvider";
 
 export default function Trainings() {
+    const {
+        training,
+    } = useContext(mainFunctions)
     const navigate = useNavigate()
     const [trainingList, setTrainingList] = useState(
         [
@@ -128,29 +133,30 @@ export default function Trainings() {
             }
         ]
     )
+    useEffect(() => {
+        console.log(training)
+    }, [training])
     return (
         <div>
             <TopHeader />
-            <div className='hero'>
-                <div className='left_container'>
-                    <h1>Find your dream trainings</h1>
-                </div>
-                <div className='right_container hero_bg'></div>
-            </div>
+            <Hero
+                title="Find your dream job"
+                bg="people_search.svg"
+            />
             <div className='section_main'>
                 <div className='section_title'>Trainings</div>
                 <div className='section_subtitle'>We will find the right job that suits you.</div>
                 <div className='trainings_list'>
-                    {trainingList.map((jb, index) => {
+                    {training.map((jb) => {
                         return (
-                            <div className='trainings_item' key={index}>
+                            <div className='trainings_item' key={jb.id}>
                                 <div className='image'></div>
                                 <div className='inner'>
                                     <div className='title'>{jb.title}</div>
                                     <div className='description'>{jb.description}</div>
                                     <div className='details'>
                                         <div className='duration'>{jb.duration}</div>
-                                        <div className='price'>{jb.price}</div>
+                                        <div className='price'>{jb.amount}</div>
                                     </div>
                                 </div>
                             </div>

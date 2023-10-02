@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TopHeader from './components/TopHeader';
+import Hero from './components/Hero';
+import { mainFunctions } from "../providers/MainProvider";
 
 export default function Landing() {
     const navigate = useNavigate()
+
+    const {
+        category,
+    } = useContext(mainFunctions)
     const [jobList, setJobList] = useState(
         [
             { "category": "Software Development", "number_of_available_jobs": 50 },
@@ -37,29 +43,33 @@ export default function Landing() {
             { "category": "Fashion", "number_of_available_jobs": 500 },
             { "category": "Arts and Culture", "number_of_available_jobs": 400 }
         ])
+
+
+
+    useEffect(() => {
+        console.log(category)
+    }, [category])
     return (
         <div>
             <TopHeader />
-            <div className='hero'>
-                <div className='left_container'>
-                    <h1>Find your dream job</h1>
-                </div>
-                <div className='right_container hero_bg'></div>
-            </div>
+            <Hero
+                title="Find your dream job"
+                bg="learning.svg"
+            />
             <div className='section_main'>
                 <div className='section_title'>Browse Jobs Categories</div>
                 <div className='section_subtitle'>We will find the right job that suits you.</div>
                 <div className='category_list'>
-                    {jobList.map((jb, index) => {
+                    {category.map((jb, index) => {
                         return (
                             <div className='category_item' key={index}
                                 onClick={() => {
-                                    navigate(`/jobs/${jb.category}`)
+                                    navigate(`/jobs/${jb.id}`)
                                 }}
                             >
                                 <div className='icon'></div>
-                                <div className='title'>{jb.category}</div>
-                                <div className='subtitle'>{jb.number_of_available_jobs} Jobs</div>
+                                <div className='title'>{jb.name}</div>
+                                {/* <div className='subtitle'>{jb.number_of_available_jobs} Jobs</div> */}
                             </div>
                         )
                     })}
