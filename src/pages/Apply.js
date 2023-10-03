@@ -37,16 +37,34 @@ export default function Apply() {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
+        let an = generateRandomString(5) + file.name
+        console.log(an)
+        setFormData({
+            ...formData,
+            cv: an
+        })
         setCV({
             ...formData,
             file: file,
         });
     };
 
+    const generateRandomString = (length) => {
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let randomString = "";
+
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charset.length);
+            randomString += charset[randomIndex];
+        }
+
+        return randomString;
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        addToDocument('applications', formData, true, cv, cv.name).then(
+        addToDocument('applications', formData, true, cv, formData.cv).then(
             (result) => {
                 console.log('THis is the result', result)
             }
