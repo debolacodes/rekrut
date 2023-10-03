@@ -2,8 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import TopHeader from './components/TopHeader';
 import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
+import { useNavigate } from 'react-router-dom';
 
 export default function JobList() {
+    const navigate = useNavigate()
     const {
         job,
         company
@@ -255,7 +257,11 @@ export default function JobList() {
                                 </div>
                                 <div className='bottom'>
                                     <div className='experience'>{jl.experience} Years</div>
-                                    <div className='btn'>Apply Now</div>
+                                    <div className='btn' onClick={
+                                        () => {
+                                            navigate(`/apply/${jl.id}`)
+                                        }
+                                    }>Apply Now</div>
                                 </div>
                             </div>
                         )

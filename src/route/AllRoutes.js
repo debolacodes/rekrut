@@ -4,6 +4,8 @@ import Landing from '../pages/Landing'
 import '../assets/global.css'
 import JobList from '../pages/JobList'
 import Trainings from '../pages/Trainings'
+import Apply from '../pages/Apply'
+import ContactUs from '../pages/ContactUs'
 
 
 export default function AllRoutes() {
@@ -15,7 +17,10 @@ export default function AllRoutes() {
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/jobs" element={<JobList />} />
         <Route exact path="/trainings" element={<Trainings />} />
+        <Route exact path="/message" element={<ContactUs />} />
         <Route exact path="/jobs/:joblist" element={<JobList />} />
+        <Route exact path="/apply/:jobid" element={<Apply />} />
+
       </Routes>
     </div>
   )

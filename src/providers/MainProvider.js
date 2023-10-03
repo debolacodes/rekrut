@@ -47,16 +47,20 @@ export default function MainProvider(props) {
 
             const storageRef = ref(storage, `${folder}/${fileName}`);
             // 'file' comes from the Blob or File API
-            uploadBytes(storageRef, file).then(async (snapshot) => {
+            return uploadBytes(storageRef, file).then(async (snapshot) => {
                 console.log('Uploaded a blob or file!');
-                const docRef = await addDoc(
+                console.log(snapshot)
+
+                return addDoc(
                     collection(db, document), FORM_DATA
-                )
-                return {
-                    success: true,
-                    data: docRef,
-                    file: snapshot
-                }
+                ).then(docRef => {
+                    return {
+                        success: true,
+                        data: docRef,
+                        file: snapshot
+                    }
+                })
+
             }).catch(
                 () => {
                     return {
