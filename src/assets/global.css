@@ -4,8 +4,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .top_header {
-    width: 80%;
+    width: 100%;
     height: 80px;
     background: #fff;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -42,7 +46,7 @@
 
 .hero {
     height: 400px;
-    width: calc(100% - 200px);
+    width: 100%;
     background: #ecd9dd;
     display: flex;
     padding: 100px 100px;
@@ -74,10 +78,11 @@
     text-align: left;
     font-size: 50px;
     color: #392e4a;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section_main {
-    width: calc(100% - 200px);
+    width: 100%;
     background: #fff;
     padding: 100px 100px;
 }
@@ -122,7 +127,7 @@
 .category_list .category_item .title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #392e4a;
+    color: #e33d94;
 }
 
 .category_list .category_item .subtitle {
@@ -154,13 +159,17 @@
 
 }
 
+.job_list .job_item.active {
+    border: solid 2px #e33d94;
+}
+
 
 .job_list .job_item .inner {
     display: flex;
     justify-content: space-between;
     height: 100px;
     align-items: center;
-    width: calc(100% - 70px);
+    width: 100%;
     padding: 0 50px;
 }
 
@@ -173,7 +182,7 @@
     display: flex;
     justify-content: space-between;
     background: #ecd9dd;
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -190,31 +199,42 @@
     text-align: left;
 }
 
+.job_item .subtitle,
+.job_item .company {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+
 .job_list .job_item .title_ {
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #392e4a;
+    color: #e33d94;
 }
 
 .trainings_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 100px;
 }
 
 .trainings_list .trainings_item {
     width: 300px;
-    margin-bottom: 50px;
+    margin: 20px;
     font-family: 'Montserrat', sans-serif;
-    padding: 0 0 10px 0;
+    padding: 10px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding-bottom: 70px;
     position: relative;
     cursor: pointer;
     border-radius: 20px;
     border: solid 1px #dcdde155;
+}
+
+.trainings_item.active {
+    border: solid 2px #e33d94;
 }
 
 .trainings_list .trainings_item:hover {
@@ -230,7 +250,7 @@
     background: url('./close-up-briefcase.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .trainings_list .trainings_item .title {
@@ -238,7 +258,7 @@
     padding: 10px;
     font-size: 15px;
     font-weight: 700;
-    color: #392e4a;
+    color: #e33d94;
 }
 
 .trainings_list .trainings_item .description {
@@ -247,7 +267,7 @@
 }
 
 .trainings_list .trainings_item .details {
-    width: calc(100% - 20px);
+    width: 100%;
     justify-content: space-between;
     display: flex;
     margin-top: 20px;
@@ -267,4 +287,46 @@
     font-size: 15px;
     color: #e33d94;
     font-weight: 800;
+}
+
+.form1 .formgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.form1 label {
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form1 input {
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid #ecd9dd 1px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+}
+
+.form1 textarea {
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border: solid #ecd9dd 1px;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+}
+
+.form1 button {
+    height: 50px;
+    width: 200px;
+    margin: 30px 0;
+    background: #043b5c;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 3px;
 }

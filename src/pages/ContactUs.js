@@ -45,8 +45,8 @@ export default function ContactUs() {
             <div className='section_main'>
                 <div className='section_subtitle'>Fill the form below to contact us.</div>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
+                <form onSubmit={handleSubmit} className='form1'>
+                    <div className="formgroup">
                         <label>First Name:</label>
                         <input
                             type="text"
@@ -56,7 +56,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Last Name:</label>
                         <input
                             type="text"
@@ -66,7 +66,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Email Address:</label>
                         <input
                             type="email"
@@ -76,7 +76,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Phone Number:</label>
                         <input
                             type="tel"
@@ -86,7 +86,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Message:</label>
                         <textarea
                             name="message"

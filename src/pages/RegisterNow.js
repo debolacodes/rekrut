@@ -2,8 +2,15 @@ import React, { useState, useEffect, useContext } from 'react';
 import TopHeader from './components/TopHeader';
 import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
-export default function ContactUs() {
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+export default function RegisterNow() {
+    const params = useParams()
+    const navigate = useNavigate()
     const {
+        job,
+        training,
+        company,
         addToDocument
     } = useContext(mainFunctions)
 
@@ -12,8 +19,11 @@ export default function ContactUs() {
         lastName: '',
         email: '',
         phone: '',
-        message: '',
     });
+
+    const [cv, setCV] = useState({
+        file: null
+    })
 
 
     const handleInputChange = (e) => {
@@ -23,11 +33,10 @@ export default function ContactUs() {
             [name]: value,
         });
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        addToDocument('contactus', formData, false).then(
+        addToDocument('registerations', formData, false).then(
             (result) => {
                 console.log('THis is the result', result)
             }
@@ -35,18 +44,62 @@ export default function ContactUs() {
         // You can submit the form data to your backend or perform any other actions here.
         console.log(formData);
     };
+
+
+
+    const [thisTraining, setThisTraining] = useState([])
+
+    useEffect(() => {
+        let tj = []
+        if (typeof training !== "undefined" && typeof params !== "undefined") {
+            if (training.length > 0 && typeof params.id !== "undefined") {
+                setFormData({ ...formData, training: params.id })
+                tj = training.filter((this_) => {
+                    if (this_.id === params.id) {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
+            }
+        }
+        setThisTraining(tj)
+    }, [job, params])
+
+    useEffect(() => {
+        console.log(job, company)
+    }, [job])
+
+    useEffect(() => {
+        console.log(params)
+    }, [params])
     return (
         <div>
-            <TopHeader />
-            <Hero
-                title="Contact Us"
-                bg="job_offers.svg"
-            />
             <div className='section_main'>
-                <div className='section_subtitle'>Fill the form below to contact us.</div>
+                <div className='section_title'>Apply</div>
+                <div className='section_subtitle'>Fill the form below to register for training.</div>
+                <div className='job_list'>
+                    {thisTraining.map((jl) => {
+                        return (
+                            <div className='job_item' key={jl.id}>
+                                <div className='top'>
+                                    <div className='icon'></div>
+                                    <div className='inner'>
+                                        <div className='title'>
+                                            <div className='title_'>{jl.title}</div>
+                                            <div className='subtitle'>{jl.description}</div>
+                                        </div>
+                                        <div className='comapny'>{jl.duration}</div>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                <form onSubmit={handleSubmit} className="form1">
+                    <div className="formgroup">
                         <label>First Name:</label>
                         <input
                             type="text"
@@ -56,7 +109,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Last Name:</label>
                         <input
                             type="text"
@@ -66,7 +119,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Email Address:</label>
                         <input
                             type="email"
@@ -76,7 +129,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Phone Number:</label>
                         <input
                             type="tel"
@@ -86,15 +139,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <div>
-                        <label>Message:</label>
-                        <textarea
-                            name="message"
-                            value={formData.introduction}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
+
                     <button type="submit">Submit</button>
                 </form>
             </div>

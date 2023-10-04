@@ -99,18 +99,13 @@ export default function Apply() {
     }, [job])
     return (
         <div>
-            <TopHeader />
-            <Hero
-                title="Find your dream job"
-                bg="job_offers.svg"
-            />
             <div className='section_main'>
                 <div className='section_title'>Apply</div>
                 <div className='section_subtitle'>Fill the form below to apply.</div>
                 <div className='job_list'>
                     {thisJob.map((jl) => {
                         return (
-                            <div className='job_item'>
+                            <div className='job_item' key={jl.id}>
                                 <div className='top'>
                                     <div className='icon'></div>
                                     <div className='inner'>
@@ -128,8 +123,8 @@ export default function Apply() {
                     })}
                 </div>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
+                <form onSubmit={handleSubmit} className="form1">
+                    <div className="formgroup">
                         <label>First Name:</label>
                         <input
                             type="text"
@@ -139,7 +134,7 @@ export default function Apply() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Last Name:</label>
                         <input
                             type="text"
@@ -149,7 +144,7 @@ export default function Apply() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Email Address:</label>
                         <input
                             type="email"
@@ -159,7 +154,7 @@ export default function Apply() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Phone Number:</label>
                         <input
                             type="tel"
@@ -169,7 +164,7 @@ export default function Apply() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Brief Introduction:</label>
                         <textarea
                             name="introduction"
@@ -178,7 +173,7 @@ export default function Apply() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="formgroup">
                         <label>Upload CV:</label>
                         <input
                             type="file"

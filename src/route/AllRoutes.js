@@ -6,6 +6,7 @@ import JobList from '../pages/JobList'
 import Trainings from '../pages/Trainings'
 import Apply from '../pages/Apply'
 import ContactUs from '../pages/ContactUs'
+import RegisterNow from '../pages/RegisterNow'
 
 
 export default function AllRoutes() {
@@ -20,6 +21,7 @@ export default function AllRoutes() {
         <Route exact path="/message" element={<ContactUs />} />
         <Route exact path="/jobs/:joblist" element={<JobList />} />
         <Route exact path="/apply/:jobid" element={<Apply />} />
+        <Route exact path="/training/:id" element={<RegisterNow />} />
 
       </Routes>
     </div>

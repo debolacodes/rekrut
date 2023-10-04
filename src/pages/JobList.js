@@ -3,9 +3,11 @@ import TopHeader from './components/TopHeader';
 import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
 import { useNavigate } from 'react-router-dom';
+import ApplyWidget from './ApplyWidget';
 
 export default function JobList() {
     const navigate = useNavigate()
+    const [selectedJob, setSelectedJob] = useState("")
     const {
         job,
         company
@@ -237,35 +239,45 @@ export default function JobList() {
                 bg="job_offers.svg"
             />
             <div className='section_main'>
-                <div className='section_title'>Technology Jobs</div>
-                <div className='section_subtitle'>We will find the right job that suits you.</div>
-                <div className='job_list'>
-                    {job.map((jl) => {
-                        return (
-                            <div className='job_item'>
-                                <div className='top'>
-                                    <div className='icon'></div>
-                                    <div className='inner'>
-                                        <div className='title'>
-                                            <div className='title_'>{jl.title}</div>
-                                            <div className='subtitle'>{jl.location}</div>
-                                        </div>
-                                        <div className='comapny'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
-                                        <div className='type'>{jl.type}</div>
+                <div className='row'>
+                    <div className='col-sm-6'>
+                        <div className='section_title'>Technology Jobs</div>
+                        <div className='section_subtitle'>We will find the right job that suits you.</div>
+                        <div className='job_list'>
+                            {job.map((jl) => {
+                                return (
+                                    <div className={`job_item ${selectedJob === jl.id ? 'active' : ""}`} key={jl.id}
+                                        onClick={() => {
+                                            setSelectedJob(jl.id)
+                                        }}>
+                                        <div className='top'>
+                                            <div className='icon'></div>
+                                            <div className='inner'>
+                                                <div className='title'>
+                                                    <div className='title_'>{jl.title}</div>
+                                                    <div className='subtitle'>{jl.location}</div>
+                                                </div>
+                                                <div className='comapny'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
+                                                <div className='type'>{jl.type}</div>
 
+                                            </div>
+                                        </div>
+                                        <div className='bottom'>
+                                            <div className='experience'>{jl.experience} Years</div>
+                                            {/* <div className='btn' onClick={
+                                                () => {
+                                                    navigate(`/apply/${jl.id}`)
+                                                }
+                                            }>Apply Now</div> */}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='bottom'>
-                                    <div className='experience'>{jl.experience} Years</div>
-                                    <div className='btn' onClick={
-                                        () => {
-                                            navigate(`/apply/${jl.id}`)
-                                        }
-                                    }>Apply Now</div>
-                                </div>
-                            </div>
-                        )
-                    })}
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className='col-sm-6'>
+                        <ApplyWidget jobid={selectedJob} />
+                    </div>
                 </div>
             </div>
         </div >
