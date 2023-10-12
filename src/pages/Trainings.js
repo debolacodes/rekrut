@@ -19,32 +19,42 @@ export default function Trainings() {
             />
             <div className='section_main'>
                 <div className='row'>
-                    <div className='col-sm-6'>
-                        <div className='section_title'>Trainings</div>
-                        <div className='section_subtitle'>We will find the right job that suits you.</div>
-                        <div className='trainings_list'>
-                            {training.map((jb) => {
-                                return (
-                                    <div className={`trainings_item 
-                                    ${selectedTraining === jb.id ? "active" : ""}
-                                    `} key={jb.id} onClick={() => setSelectedTraining(jb.id)}>
-                                        <div className='image'></div>
-                                        <div className='inner'>
-                                            <div className='title'>{jb.title}</div>
-                                            <div className='description'>{jb.description}</div>
-                                            <div className='details'>
-                                                <div className='duration'>{jb.duration}</div>
-                                                <div className='price'>{jb.amount}</div>
+                    {selectedTraining === "" &&
+                        <div className='col-sm-12'>
+                            <div className='section_title'>Trainings</div>
+                            <div className='section_subtitle'>We will find the right job that suits you.</div>
+                            <div className='trainings_list'>
+                                {training.map((jb) => {
+                                    return (
+                                        <div className={`trainings_item 
+                                        ${selectedTraining === jb.id ? "active" : ""}
+                                        `} key={jb.id} onClick={() => setSelectedTraining(jb.id)}>
+                                            <div className='image'></div>
+                                            <div className='inner'>
+                                                <div className='title'>{jb.title}</div>
+                                                <div className='description'>{jb.description}</div>
+                                                <div className='details'>
+                                                    <div className='duration'>{jb.duration}</div>
+                                                    <div className='price'>{jb.amount}</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )
-                            })}
+                                    )
+                                })}
+                            </div>
+
                         </div>
-                    </div>
-                    <div className='col-sm-6'>
-                        <RegisterNowWidget id={selectedTraining} />
-                    </div>
+                    }
+                    {selectedTraining !== "" &&
+                        <div className='col-sm-12'>
+                            <div className='goback'
+                                onClick={() => {
+                                    setSelectedTraining("")
+                                }}
+                            >Go back to Trainings</div>
+                            <RegisterNowWidget id={selectedTraining} />
+                        </div>
+                    }
                 </div>
             </div>
         </div >

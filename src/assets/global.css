@@ -1,11 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
+
+:root {
+    --primary_color: #043b5c;
+    --primary_color_lighter: #078fe4;
+    --primary_color_darker: #02111a;
+    --secondary_color: #ffffff;
+    --tertiary_color: #392e4a;
+    --butter: #ecd9dd;
+    --red: #e33d94;
+    --grey: #dcdde1;
+    --white: #fff;
+}
+
+
 .html {
     font-family: 'Montserrat', sans-serif;
 }
 
+.goback {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--primary_color);
+    font-size: 10px;
+    padding: 10px;
+    width: 200px;
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 p {
     font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--primary_color) !important;
+    color: #fff
+}
+
+.btn-primary:hover {
+    background: var(--primary_color_darker);
 }
 
 .top_header {
@@ -76,9 +110,16 @@ p {
 
 .hero h1 {
     text-align: left;
-    font-size: 50px;
-    color: #392e4a;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary-color);
     font-family: 'Montserrat', sans-serif;
+}
+
+.hero p {
+    font-size: 20px;
+    text-align: left;
+    color: var(--primary_color_lighter)
 }
 
 .section_main {
@@ -92,7 +133,7 @@ p {
     font-size: 26px;
     font-weight: 600;
     padding-bottom: 30px;
-    color: #392e4a;
+    color: var(--tertiary_color);
 }
 
 .section_subtitle {
@@ -109,7 +150,7 @@ p {
 .category_list .category_item .icon {
     height: 70px;
     width: 70px;
-    background: #392e4a;
+    background: var(--tertiary_color);
     margin: 0 auto 20px;
 
 }
@@ -134,7 +175,7 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 12px;
-    color: #392e4a;
+    color: var(--tertiary_color);
 }
 
 .category_list .category_item .icon {
@@ -263,7 +304,7 @@ p {
 
 .trainings_list .trainings_item .description {
     font-size: 12px;
-    color: #043b5c;
+    color: var(--primary-color);
 }
 
 .trainings_list .trainings_item .details {
@@ -280,7 +321,7 @@ p {
 
 .trainings_list .trainings_item .duration {
     font-size: 12px;
-    color: #043b5c;
+    color: var(--primary-color);
 }
 
 .trainings_list .trainings_item .price {
@@ -324,9 +365,71 @@ p {
     height: 50px;
     width: 200px;
     margin: 30px 0;
-    background: #043b5c;
+    background: var(--primary-color);
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 3px;
+}
+
+
+.section {
+    background: #ecd9dd;
+    padding: 40px 5%;
+    font-family: 'montserrat';
+}
+
+.section .title {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'montserrat';
+    margin-bottom: 40px;
+}
+
+.section .subtitle {
+    font-size: 13px;
+}
+
+.section .row {
+    margin-top: 50px;
+}
+
+.section .col {
+    padding: 20px
+}
+
+.section .list_title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.section.dark {
+    background: var(--tertiary_color);
+    color: #fff;
+}
+
+.section.light {
+    background: #fff;
+    padding: 100px 5%;
+}
+
+.quote {
+    font-size: 22px;
+}
+
+.cta {
+    background: var(--primary_color);
+    max-width: 300px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+    margin: 30px auto;
+    font-family: 'montserrat';
+    cursor: pointer;
+}
+
+.cta:hover {
+    background: #000c14;
 }

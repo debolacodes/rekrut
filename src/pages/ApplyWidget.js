@@ -181,7 +181,7 @@ export default function ApplyWidget({ jobid }) {
                                 required
                             />
                         </div>
-                        <button type="submit">Submit</button>
+                        <button class="btn-primary btn" type="submit">Submit</button>
                     </form>
                 </div>
             }

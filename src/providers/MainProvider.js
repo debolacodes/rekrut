@@ -1,16 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import { db } from '../firebaseConfig/initialise.js'
+import { db, app } from '../firebaseConfig/initialise.js'
 import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 export default function MainProvider(props) {
+
+    const auth = getAuth(app);
+    // onAuthStateChanged(auth, (user) => {
+    //     if (user) {
+    //         // User is signed in, see docs for a list of available properties
+    //         // https://firebase.google.com/docs/reference/js/auth.user
+    //         const uid = user.uid;
+    //         // ...
+    //     } else {
+    //         // User is signed out
+    //         // ...
+    //     }
+    // });
     const storage = getStorage();
     const [category, setCategory] = useState([]);
     const [training, setTraining] = useState([]);
     const [job, setJobs] = useState([]);
     const [company, setCompany] = useState({})
 
-
+    const signin = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
 
     const getDocument = async (document, setDocument = setCategory) => {
         const documentCol = collection(db, document);
