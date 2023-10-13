@@ -74,7 +74,7 @@ export default function RegisterNowWidget({ id }) {
             <div className='section_main'>
                 {thisTraining.length !== 0 &&
                     <div>
-                        <div className='section_title'>Apply</div>
+                        <div className='section_title'>Register Now</div>
                         <div className='section_subtitle'>Fill the form below to register for training.</div>
                         <div className='job_list'>
                             {thisTraining.map((jl) => {
