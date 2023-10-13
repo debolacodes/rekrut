@@ -41,6 +41,7 @@ export default function ContactUs() {
             <Hero
                 title="Contact Us"
                 bg="job_offers.svg"
+                image_url='https://res.cloudinary.com/farmz2u/image/upload/v1697173716/Genie/a3psmrg2bwawf1nfuvly.jpg'
             />
             <div className='section_main'>
                 <div className='section_subtitle'>Fill the form below to contact us.</div>

@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
 import JobWidget from './components/JobsWidget';
 
-export default function Landing() {
+export default function Services() {
     const navigate = useNavigate()
 
     const {
@@ -22,17 +22,11 @@ export default function Landing() {
         <div>
             <TopHeader />
             <Hero
-                title="Welcome to Genie Consulting."
+                title="Our Services"
                 subtitle="Your trusted partner in Human Resources Solutions."
                 bg="learning.svg"
-                image_url="https://res.cloudinary.com/farmz2u/image/upload/v1697175300/Genie/amkhbym5cquiozsaevxp.jpg"
+                image_url="https://res.cloudinary.com/farmz2u/image/upload/v1697173667/Genie/ftfhbmdhcj5zl2kzdrbh.jpg"
             />
-            <div className='section light'>
-                <div className='title'>About Us</div>
-                <div className='quote'>
-                    We are a dedicated team of professionals committed to helping businesses optimize their workforce, foster talent development, and streamline HR processes. With a wealth of experience and a passion for excellence, we provide a comprehensive suite of services that empower organizations to achieve their human resources goals.
-                </div>
-            </div>
 
             <div className='section dark'>
                 <div className='title'>Our Services</div>
@@ -67,34 +61,6 @@ export default function Landing() {
 
                 </div>
             </div>
-
-            <div className='section'>
-                <div className='title'>Why Choose Us</div>
-                <div className='section_text'>
-                    At  Genie Consulting, we pride ourselves on being more than just consultants. We are your strategic partners in HR, working collaboratively with you to achieve your HR goals and enhance your company's performance. Here are some reasons why you should choose us.
-                </div>
-                <div className='why_choose_us row'>
-                    <div className='col col-sm-12'>
-                        <div className='list_title'>Expertise</div>
-                        <div className='list_text'>
-                            Our team consists of seasoned HR professionals with extensive industry knowledge. We stay updated with the latest trends and regulations to provide you with the most relevant and effective solutions.
-                        </div>
-                    </div>
-                    <div className='col col-sm-12'>
-                        <div className='list_title'>Results-Oriented</div>
-                        <div className='list_text'>
-                            We measure our success by the impact we make on your business. Our solutions are designed to deliver measurable results that drive growth and efficiency.
-                        </div>
-                    </div>
-                    <div className='col col-sm-12'>
-                        <div className='list_title'>Confidentiality</div>
-                        <div className='list_text'>
-                            We treat all client information with the utmost confidentiality and adhere to the highest ethical standards in our industry.
-                        </div>
-                    </div>
-                </div>
-                <div className='cta'>Contact Us Today</div>
-            </div>
             <div className='section_main'>
                 <div className='section_title'>Browse Jobs Categories</div>
                 <div className='section_subtitle'>
@@ -108,8 +74,6 @@ export default function Landing() {
                 >
                     Find Jobs Now
                 </div>
-
-                <JobWidget />
             </div>
         </div >
     );

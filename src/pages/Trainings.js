@@ -14,8 +14,10 @@ export default function Trainings() {
         <div>
             <TopHeader />
             <Hero
-                title="Find your dream job"
+                title="Trainings"
+                subtitle='Find the best trainings for you'
                 bg="people_search.svg"
+                image_url='https://res.cloudinary.com/farmz2u/image/upload/v1697173716/Genie/a3psmrg2bwawf1nfuvly.jpg'
             />
             <div className='section_main'>
                 <div className='row'>
@@ -29,7 +31,9 @@ export default function Trainings() {
                                         <div className={`trainings_item 
                                         ${selectedTraining === jb.id ? "active" : ""}
                                         `} key={jb.id} onClick={() => setSelectedTraining(jb.id)}>
-                                            <div className='image'></div>
+                                            <div className='image'
+                                            style={{background: `url(${jb.image})`, backgroundSize:"cover"}}
+                                            ></div>
                                             <div className='inner'>
                                                 <div className='title'>{jb.title}</div>
                                                 <div className='description'>{jb.description}</div>

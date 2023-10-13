@@ -34,13 +34,13 @@ export default function JobWidget() {
                                                     <div className='title_'>{jl.title}</div>
                                                     <div className='subtitle'>{jl.location}</div>
                                                 </div>
-                                                <div className='comapny'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
+                                                <div className='comapny'>{jl.company_name}</div>
                                                 <div className='type'>{jl.type}</div>
 
                                             </div>
                                         </div>
                                         <div className='bottom'>
-                                            <div className='experience'>{jl.experience} Years</div>
+                                            <div className='experience'>{jl.salary}</div>
                                             {/* <div className='btn' onClick={
                                                 () => {
                                                     navigate(`/apply/${jl.id}`)

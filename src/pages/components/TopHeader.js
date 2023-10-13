@@ -14,6 +14,9 @@ export default function TopHeader() {
                     onClick={() => navigate('/trainings')}
                 >Trainings</div>
                 <div className='nav_item'
+                    onClick={() => navigate('/services')}
+                >Our Services</div>
+                <div className='nav_item'
                     onClick={() => navigate('/message')}
                 >Contact Us</div>
             </div>

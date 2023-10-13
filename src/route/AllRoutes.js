@@ -12,6 +12,7 @@ import AdminDashboard from '../pages/admin/AdminDashboard'
 import AdminJobs from '../pages/admin/AdminJobs'
 import AdminTrainings from '../pages/admin/AdminTrainings'
 import AdminMessages from '../pages/admin/AdminMessages'
+import Services from '../pages/Services'
 
 
 export default function AllRoutes() {
@@ -25,6 +26,7 @@ export default function AllRoutes() {
         <Route exact path="/jobs/:joblist" element={<JobList />} />
         <Route exact path="/trainings" element={<Trainings />} />
         <Route exact path="/message" element={<ContactUs />} />
+        <Route exact path="/services" element={<Services />} />
         <Route exact path="/admin" element={< AdminLogin />} />
         <Route exact path="/admin/login" element={< AdminLogin />} />
         <Route exact path="/admin/dashboard" element={<AdminDashboard />} />

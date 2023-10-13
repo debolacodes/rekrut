@@ -104,6 +104,7 @@ export default function ApplyWidget({ jobid }) {
                     <div className='job_list'>
                         {thisJob.map((jl) => {
                             return (
+                                <div>
                                 <div className='job_item' key={jl.id}>
                                     <div className='top'>
                                         <div className='inner'>
@@ -111,15 +112,23 @@ export default function ApplyWidget({ jobid }) {
                                                 <div className='title_'>{jl.title}</div>
                                                 <div className='subtitle'>{jl.location}</div>
                                             </div>
-                                            <div className='company'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
-                                            <div className='company'>{jl.type}</div>
+                                            <div className='company'>{jl.company_name}</div>
+                                            <div className='company'>
+                                                <div>{jl.salary}</div>
+                                                {jl.type}</div>
 
                                         </div>
                                     </div>
                                 </div>
+                                <div className='more'>
+                                    <div className='description'>{jl.description}</div>
+                                    <div className='details'>{jl.details}</div>
+                                </div>    
+                            </div>
                             )
                         })}
                     </div>
+                    
 
                     <form onSubmit={handleSubmit} className="form1">
                         <div className="formgroup">
