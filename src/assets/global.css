@@ -23,7 +23,7 @@ p {
 .top_header .logo {
     height: 80px;
     width: 120px;
-    background: url('./logo.png');
+    background: url('./logo.svg');
     cursor: pointer;
     background-size: cover;
     background-position: center;
