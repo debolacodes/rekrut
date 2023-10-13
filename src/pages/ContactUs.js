@@ -96,7 +96,7 @@ export default function ContactUs() {
                             required
                         />
                     </div>
-                    <button type="submit">Submit</button>
+                    <div type="submit" className='cta'>Contact Us</div>
                 </form>
             </div>
         </div >
