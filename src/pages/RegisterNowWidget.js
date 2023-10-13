@@ -137,7 +137,7 @@ export default function RegisterNowWidget({ id }) {
                                 />
                             </div>
 
-                            <button type="submit">Submit</button>
+                            <div className='cta' type="submit">Submit</div>
                         </form>
                     </div>
                 }
