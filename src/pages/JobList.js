@@ -24,9 +24,12 @@ export default function JobList() {
             <Hero
                 title="Find your dream job"
                 bg="job_offers.svg"
+                subtitle='Taking the burden off job search'
                 image_url='https://res.cloudinary.com/farmz2u/image/upload/v1697175337/Genie/lu32ilzg88wqep8qdhjy.jpg'
             />
-            <JobWidget />
+            <section className='section_main'>
+                <JobWidget />
+            </section>
         </div >
     );
 }

@@ -113,7 +113,7 @@ export default function Apply() {
                                             <div className='title_'>{jl.title}</div>
                                             <div className='subtitle'>{jl.location}</div>
                                         </div>
-                                        <div className='comapny'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
+                                        <div className='company'>{typeof company[jl.company] !== 'undefined' ? company[jl.company].name : 'Unlnown Company'}</div>
                                         <div className='type'>{jl.type}</div>
 
                                     </div>

@@ -1,12 +1,19 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function TopHeader() {
     const navigate = useNavigate()
+    const [showNav, setShowNav] = useState(false);
+    const location = useLocation()
+
+    useEffect(()=>{
+        setShowNav(false)
+    },[location])
     return (
         <div className='top_header'>
             <div className='logo' onClick={() => navigate('/')}></div>
-            <div className='nav'>
+            <div className={`nav ${showNav ? 'showOnSmall': ''}`}
+            >
                 <div className='nav_item'
                     onClick={() => navigate('/jobs')}
                 >Job Board</div>
@@ -20,6 +27,7 @@ export default function TopHeader() {
                     onClick={() => navigate('/message')}
                 >Contact Us</div>
             </div>
+            <div className='anchor' onClick={()=>setShowNav(!showNav)}></div>
         </div>
     );
 }

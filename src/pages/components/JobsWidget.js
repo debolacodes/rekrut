@@ -16,7 +16,7 @@ export default function JobWidget() {
     }, [job])
 
     return (
-        <div className='section_main'>
+        <div className=''>
             <div className='row'>
                 {selectedJob === "" &&
                     <div className='col-sm-12'>
@@ -34,7 +34,7 @@ export default function JobWidget() {
                                                     <div className='title_'>{jl.title}</div>
                                                     <div className='subtitle'>{jl.location}</div>
                                                 </div>
-                                                <div className='comapny'>{jl.company_name}</div>
+                                                <div className='company'>{jl.company_name}</div>
                                                 <div className='type'>{jl.type}</div>
 
                                             </div>

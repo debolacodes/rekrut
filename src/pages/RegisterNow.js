@@ -89,7 +89,7 @@ export default function RegisterNow() {
                                             <div className='title_'>{jl.title}</div>
                                             <div className='subtitle'>{jl.description}</div>
                                         </div>
-                                        <div className='comapny'>{jl.duration}</div>
+                                        <div className='company'>{jl.duration}</div>
 
                                     </div>
                                 </div>
