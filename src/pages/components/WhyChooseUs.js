@@ -1,7 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function WhyChooseUs() {
-  return (
+  const navigate = useNavigate()
+    return (
         <div className='section'>
         <div className='title'>Why Choose Us</div>
         <div className='section_text'>
@@ -27,7 +29,7 @@ export default function WhyChooseUs() {
                 </div>
             </div>
         </div>
-        <div className='cta'>Contact Us Today</div>
+        <div className='cta' onClick={()=>navigate('/message')} >Contact Us Today</div>
         </div>
 )}
 
