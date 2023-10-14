@@ -33,9 +33,8 @@ export default function RegisterNow() {
             [name]: value,
         });
     }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
+    const handleSubmit = () => {
+        console.log('about to submit')
         addToDocument('registerations', formData, false).then(
             (result) => {
                 console.log('THis is the result', result)
@@ -98,7 +97,7 @@ export default function RegisterNow() {
                     })}
                 </div>
 
-                <form onSubmit={handleSubmit} className="form1">
+                <form className="form1">
                     <div className="formgroup">
                         <label>First Name:</label>
                         <input
@@ -140,7 +139,7 @@ export default function RegisterNow() {
                         />
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button onClick={()=>handleSubmit()} type="submit">Submit</button>
                 </form>
             </div>
         </div >

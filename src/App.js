@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './assets/table.css';
 import AllRoutes from './route/AllRoutes';
 
 function App() {

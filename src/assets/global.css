@@ -91,6 +91,55 @@ p {
     
     
 }
+.admin-page{
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 62%);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+.login-form{
+    background-color: var(--white);
+    padding: 50px 30px;
+    border-radius: 10px;
+    margin-top: 100px;
+    width: 400px;
+    height: 400px;
+    font-family: montserrat;
+}
+.login-form input{
+    width: 100%;
+    margin: auto
+}
+.login-form .form-group{
+    margin-top:20px;
+}
+.login-form label{
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.login-form h2{
+    font-weight: 600;
+    margin: 0px 0 30px;
+    font-size: 20px;
+}
+.login-form .btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+    margin: 30px auto;
+    font-family: 'montserrat';
+    cursor: pointer;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 62%);
+}
+
 .hero .layer{
     background-image: url('./wavy.svg');
     background-size: contain;
@@ -480,6 +529,62 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 }
 
 
+.sidenav{
+    width: 300px;
+    height: 100vh;
+    background: #043b5c;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, #043b5c 0%, rgba(9,9,121,1) 52%);
+    padding: 20px;
+    font-family: 'montserrat';
+}
+
+.sidenav .nav{
+    width: 100%;
+    min-height: 200px;
+    margin-top: 100px;
+}
+.sidenav .nav-item{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #d4e6fc;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border-bottom: solid #078fe4 2px;
+    cursor: pointer;
+}
+
+.sidenav .nav-item:hover{
+    background: var(--secondary_color);
+}
+
+.admin_main{
+    background: #392e4a;
+    display: flex;
+}
+.admin_content{
+    height: 100vh;
+    width: calc(100% - 300px);
+    background: var(--secondary_color);
+    font-family: 'montserrat';
+    padding: 50px;
+    overflow: auto;
+}
+.admin_content .top{
+    text-align: left;
+    padding: 20px 0;
+}
+.admin_content .top .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.admin_content .top .subtitle{
+    font-size: 13px;
+}
+.main_content{
+
+}
 @media screen and (max-width: 800px) {
     .hero{
         height: auto !important;

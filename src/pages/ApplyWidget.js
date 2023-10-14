@@ -59,9 +59,7 @@ export default function ApplyWidget({ jobid }) {
         return randomString;
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
+    const handleSubmit = () => {
         addToDocument('applications', formData, true, cv, formData.cv).then(
             (result) => {
                 console.log('THis is the result', result)
@@ -190,7 +188,7 @@ export default function ApplyWidget({ jobid }) {
                                 required
                             />
                         </div>
-                        <button class="btn-primary btn" type="submit">Submit</button>
+                        <div onClick={()=>handleSubmit()} className="btn-primary btn">Submit</div>
                     </form>
                 </div>
             }

@@ -32,7 +32,6 @@ export default function RegisterNowWidget({ id }) {
         });
     }
     const handleSubmit = (e) => {
-        e.preventDefault();
 
         addToDocument('registerations', formData, false).then(
             (result) => {
@@ -137,7 +136,7 @@ export default function RegisterNowWidget({ id }) {
                                 />
                             </div>
 
-                            <div className='cta' type="submit">Submit</div>
+                            <div className='cta' type="submit" onClick={()=>handleSubmit()}>Submit</div>
                         </form>
                     </div>
                 }

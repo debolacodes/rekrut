@@ -22,7 +22,9 @@ export default function MainProvider(props) {
     const [category, setCategory] = useState([]);
     const [training, setTraining] = useState([]);
     const [job, setJobs] = useState([]);
-    const [company, setCompany] = useState({})
+    const [company, setCompany] = useState([])
+    const [registerations, setRegisterations] = useState([])
+    const [applications, setApplications] = useState([])
 
     const signin = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
@@ -95,6 +97,7 @@ export default function MainProvider(props) {
                 }
             );
         } else {
+            console.log(FORM_DATA, document)
             const docRef = await addDoc(
                 collection(db, document), FORM_DATA
             )
@@ -110,6 +113,7 @@ export default function MainProvider(props) {
         getDocument('training', setTraining)
         getDocument('jobs', setJobs)
         getDocumentArray('company', setCompany)
+        
     }, [])
     return (
         <mainFunctions.Provider
@@ -118,7 +122,12 @@ export default function MainProvider(props) {
                 training,
                 job,
                 company,
-                addToDocument
+                addToDocument,
+                applications,
+                registerations,
+                setRegisterations,
+                setApplications,
+                getDocumentArray
             }}
         >
             {props.children}
