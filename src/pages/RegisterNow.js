@@ -72,6 +72,8 @@ export default function RegisterNow() {
     useEffect(() => {
         console.log(params)
     }, [params])
+
+    
     return (
         <div>
             <div className='section_main'>
@@ -142,6 +144,8 @@ export default function RegisterNow() {
                     <button onClick={()=>handleSubmit()} type="submit">Submit</button>
                 </form>
             </div>
+
+            
         </div >
     );
 }

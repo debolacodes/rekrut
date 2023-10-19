@@ -3,15 +3,19 @@ import TopHeader from './components/TopHeader';
 import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
 import { useNavigate } from 'react-router-dom';
+import LoginWidget from './components/LoginWigdet';
+import SignUpWidget from './components/SignUpWidget';
 export default function RegisterNowWidget({ id }) {
     const navigate = useNavigate()
     const {
         job,
         training,
         company,
-        addToDocument
+        addToDocument,
+        thisuser
     } = useContext(mainFunctions)
 
+    const [hasAccount, setHasAccount] = useState(false)
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -50,7 +54,7 @@ export default function RegisterNowWidget({ id }) {
         let tj = []
         if (typeof training !== "undefined") {
             if (training.length > 0 && typeof id !== "undefined") {
-                setFormData({ ...formData, training: id })
+                setFormData({ ...formData, training: id, uid: thisuser.uid })
                 tj = training.filter((this_) => {
                     if (this_.id === id) {
                         return true
@@ -70,8 +74,10 @@ export default function RegisterNowWidget({ id }) {
 
     return (
         <div>
+
+
             <div className='section_main'>
-                {thisTraining.length !== 0 &&
+                {thisTraining.length !== 0 && typeof thisuser.uid !== "undefined" &&
                     <div>
                         <div className='section_title'>Register Now</div>
                         <div className='section_subtitle'>Fill the form below to register for training.</div>
@@ -143,6 +149,33 @@ export default function RegisterNowWidget({ id }) {
                 {thisTraining.length === 0 &&
                     <p>Select a Job on the Job Board.</p>
                 }
+
+                {thisTraining.length !== 0 && typeof thisuser.uid === "undefined" &&
+                <div className="admin-page d-flex-y">
+                        <h2 className='title_h2'>You are required to register for training.</h2>
+                        {hasAccount &&
+                        <LoginWidget />
+                        }
+                        {!hasAccount &&
+                        <SignUpWidget />
+                        }
+                        <div
+                        onClick={()=>setHasAccount(!hasAccount)}
+                        className="login_footnote"
+                        >
+                            {hasAccount &&
+                            <>    
+                            Need an Account? Click here to register
+                            </>
+                            }
+                            {!hasAccount &&
+                            <>    
+                                Already have an account? Click here to login
+                            </>
+                            }
+                        </div>
+                </div>
+            }
             </div>
         </div >
     );

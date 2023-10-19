@@ -8,11 +8,15 @@
     --secondary_color: #ffffff;
     --tertiary_color: #392e4a;
     --butter: #d4e6fc;
-    --red: #05055c;
+    --red: #b71540;
+    --brick_red: #22050d;
     --grey: #dcdde1;
     --white: #fff;
 }
 
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .html {
     font-family: 'Montserrat', sans-serif;
@@ -49,17 +53,17 @@ p {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 10px 10%;
     font-family: 'Montserrat', sans-serif;
     justify-content: space-between;
 }
 
 .top_header .logo {
-    height: 80px;
+    height: 60px;
     width: 120px;
     background: url('./logo.svg');
     cursor: pointer;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -69,7 +73,7 @@ p {
 }
 .top_header .nav {
     display: flex;
-    width: 400px;
+    width: 500px;
     justify-content: space-between;
     font-size: 12px;
 }
@@ -106,12 +110,22 @@ p {
     border-radius: 10px;
     margin-top: 100px;
     width: 400px;
-    height: 400px;
+    height: 500px;
     font-family: montserrat;
+}
+
+.login-form .logo{
+    width:100%;
+    height: 80px;
+    background: url('./logo.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .login-form input{
     width: 100%;
-    margin: auto
+    margin: auto;
+    background: var(--grey);
 }
 .login-form .form-group{
     margin-top:20px;
@@ -126,6 +140,8 @@ p {
     font-weight: 600;
     margin: 0px 0 30px;
     font-size: 20px;
+    text-align: center;
+    color: var(--red)
 }
 .login-form .btn{
     width: 100%;
@@ -136,8 +152,15 @@ p {
     margin: 30px auto;
     font-family: 'montserrat';
     cursor: pointer;
+    border: none;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 62%);
+    background: linear-gradient(90deg, var(--brick_red) 0%, var(--red) 62%);
+}
+
+.login-form .btn:hover {
+    background: #000c14;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg,  var(--red)60%, var(--brick_red) 92%);
 }
 
 .hero .layer{
@@ -153,6 +176,10 @@ p {
 .hero .left_container {
     height: 100%;
     width: 60%;
+}
+
+.hero .left_container .cta{
+    margin: 30px 0 !important;
 }
 
 .hero .right_container {
@@ -203,6 +230,7 @@ p {
 
 .section_subtitle {
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 
 }
 
@@ -471,6 +499,10 @@ p {
     font-weight: 600;
     font-family: 'montserrat';
     margin-bottom: 40px;
+    text-align: center;
+}
+.section .title {
+    color: var(--red);
 }
 
 .section .subtitle {
@@ -488,6 +520,7 @@ p {
 .section .list_title {
     font-weight: 600;
     font-size: 15px;
+    color: var(--red)
 }
 
 .section.dark {
@@ -503,7 +536,8 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 }
 
 .quote {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .cta {
@@ -517,12 +551,13 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
     font-family: 'montserrat';
     cursor: pointer;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 62%);
+    background: linear-gradient(90deg, var(--brick_red) 0%, var(--red) 62%);
 }
 
 .cta:hover {
     background: #000c14;
-    
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg,  var(--red)60%, var(--brick_red) 92%);
 }
 .more{
 
@@ -585,6 +620,74 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 .main_content{
 
 }
+
+.title_h2{
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.login_footnote{
+    padding: 20px 0;
+    color: #fff;
+    text-align: center; 
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.d-flex-y{
+    display: flex;
+    align-content: unset;
+    justify-content: unset;
+    overflow: auto;
+    flex-direction: column;
+    height: auto;
+    padding: 100px 0;
+}
+.d-flex-y .login-form{
+    margin: auto;
+    max-width: 90%;
+}
+.cards{
+    width: 100%;
+    margin: 30px auto 50px;
+}
+.cards .card{
+    border: none;
+    background: unset;
+}
+
+.cards .inner{
+    padding: 20px 50px;
+    background: white;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, var(--primary_color_darker) 0%, var(--primary_color) 62%);
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    border: solid 1px var(--brick_red);
+    border-radius: 10px;
+    display: flex;
+}
+.cards .inner .icon{
+    width: 70px;
+    height: 70px;
+    background: #b71540;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.cards .inner .value{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--red)
+}
+.cards .inner .text{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white)
+}
 @media screen and (max-width: 800px) {
     .hero{
         height: auto !important;
@@ -603,6 +706,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
         text-align: center;
         margin-bottom: 40px;
     }
+    
     .hero .right_container{
         width: 100%;
         height: 300px;
@@ -622,7 +726,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 600px) {
     
     .top_header{
         position: relative;

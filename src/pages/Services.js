@@ -27,6 +27,7 @@ export default function Services() {
                 subtitle="Your trusted partner in Human Resources Solutions."
                 bg="learning.svg"
                 image_url="https://res.cloudinary.com/farmz2u/image/upload/v1697173667/Genie/ftfhbmdhcj5zl2kzdrbh.jpg"
+                showButton={true}
             />
 
             <OurServices />

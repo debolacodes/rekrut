@@ -1,18 +1,20 @@
 import React, {useContext, useEffect} from 'react';
 import SideNav from './components/SideNav';
-import { mainFunctions } from "../../providers/MainProvider";
-import { useNavigate } from 'react-router-dom';
+import { mainFunctions } from "../../providers/MainProvider"
 
 export default function AdminApplications() {
+    
     const {
         applications,
+        jobList,
         setApplications,
-        getDocumentArray
+        getDocument
     } = useContext(mainFunctions)
 
     useEffect(()=>{
-        getDocumentArray('applications', setApplications)
+        getDocument('applications', setApplications)
     },[])
+
     return (
         <div className='admin_main'>
             <SideNav />
@@ -25,27 +27,27 @@ export default function AdminApplications() {
                 <div className='wrap-table100'>
                 <table>
                     <thead>
-                        <tr class="table100-head">
-                            <th class="column1">S/N</th>
-                            <th class="column2">Firstname</th>
-                            <th class="column3">Lastname</th>
-                            <th class="column4">Email</th>
-                            <th class="column5">Phone</th>
-                            <th class="column6">Introduction</th>
-                            <th class="column7">CV</th>
+                        <tr className="table100-head">
+                            <th className="column1">S/N</th>
+                            <th className="column2">Name</th>
+                            <th className="column3">Job</th>
+                            <th className="column4">Email</th>
+                            <th className="column5">Phone</th>
+                            <th className="column6">Introduction</th>
+                            <th className="column7">CV</th>
                         </tr>
                     </thead>
                     <tbody>
                         {applications.map((item, index)=>{
                         return(
-                            <tr>
-                                <td class="column1">{index + 1}</td>
-                                <td class="column2">{item.firstName}</td>
-                                <td class="column3">{item.lastName}</td>
-                                <td class="column4">{item.email}</td>
-                                <td class="column5">{item.phone}</td>
-                                <td class="column5">{item.introduction.substring(1, 20)} ...</td>
-                                <td class="column5">{item.cv}</td>
+                            <tr key={index}>
+                                <td className="column1">{index + 1}</td>
+                                <td className="column2">{item.firstName} {item.lastName}</td>
+                                <td className="column3">{typeof jobList[item.job] !== "undefined" ? jobList[item.job].title : ""}</td>
+                                <td className="column4">{item.email}</td>
+                                <td className="column5">{item.phone}</td>
+                                <td className="column5">{item.introduction.substring(1, 20)} ...</td>
+                                <td className="column5">{item.cv}</td>
                             </tr>
                         )})}
                        

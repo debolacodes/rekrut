@@ -8,7 +8,7 @@ export default function SideNav() {
         <div className='nav'>
             <div className='nav-item' onClick={()=>navigate('/admin/dashboard')}>Dashboard</div>
             <div className='nav-item'  onClick={()=>navigate('/admin/jobs')}>Jobs</div>
-            <div className='nav-item'  onClick={()=>navigate('/admin/training')}>Trainings</div>
+            <div className='nav-item'  onClick={()=>navigate('/admin/trainings')}>Trainings</div>
             <div className='nav-item'  onClick={()=>navigate('/admin/applications')}>Applications</div>
             <div className='nav-item'  onClick={()=>navigate('/admin/registerations')}>Registerations</div>
             <div className='nav-item'  onClick={()=>navigate('/admin/messages')}>Messages</div>

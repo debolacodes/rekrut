@@ -13,6 +13,13 @@ import AdminJobs from '../pages/admin/AdminJobs'
 import AdminTrainings from '../pages/admin/AdminTrainings'
 import AdminMessages from '../pages/admin/AdminMessages'
 import Services from '../pages/Services'
+import AdminApplications from '../pages/admin/AdminApplications'
+import AdminRegisterations from '../pages/admin/AdminRegisterations'
+import Login from '../pages/Login'
+import SignUp from '../pages/SignUp'
+import UserRegisterations from '../pages/user/UserRegisterations'
+import UserApplications from '../pages/user/UserApplications'
+import UserDashboard from '../pages/user/UserDashboard'
 
 
 export default function AllRoutes() {
@@ -27,11 +34,21 @@ export default function AllRoutes() {
         <Route exact path="/trainings" element={<Trainings />} />
         <Route exact path="/message" element={<ContactUs />} />
         <Route exact path="/services" element={<Services />} />
+        <Route exact path="/login" element={< Login />} />
+        <Route exact path="/signup" element={< SignUp />} />
+
+        <Route exact path="/user/" element={< UserApplications />} />
+        <Route exact path="/user/applications" element={< UserApplications />} />
+        <Route exact path="/user/registerations" element={< UserRegisterations />} />
+
+
         <Route exact path="/admin" element={< AdminLogin />} />
         <Route exact path="/admin/login" element={< AdminLogin />} />
         <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
         <Route exact path="/admin/jobs" element={<AdminJobs />} />
         <Route exact path="/admin/trainings" element={<AdminTrainings />} />
+        <Route exact path="/admin/applications" element={<AdminApplications />} />
+        <Route exact path="/admin/registerations" element={<AdminRegisterations />} />
         <Route exact path="/admin/messages" element={<AdminMessages />} />
 
       </Routes>

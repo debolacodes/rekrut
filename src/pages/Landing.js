@@ -28,7 +28,9 @@ export default function Landing() {
                 subtitle="Your trusted partner in Human Resources Solutions."
                 bg="learning.svg"
                 image_url="https://res.cloudinary.com/farmz2u/image/upload/v1697175300/Genie/amkhbym5cquiozsaevxp.jpg"
+                showButton={true}
             />
+            
             <div className='section light'>
                 <div className='title'>About Us</div>
                 <div className='quote'>
@@ -36,11 +38,8 @@ export default function Landing() {
                 </div>
             </div>
 
-            <OurServices />
-
-            <WhyChooseUs />
-            <div className='section_main'>
-                <div className='section_title'>Browse Jobs Categories</div>
+            <div className='section dark'>
+                <div className='title'>Find Jobs</div>
                 <div className='section_subtitle'>
                     Jobs are hard to find, but JobGenie is here to make it easy.
                     <br />Your next career move is just a click away.
@@ -52,9 +51,12 @@ export default function Landing() {
                 >
                     Find Jobs Now
                 </div>
-
-                <JobWidget />
             </div>
+
+            <OurServices />
+
+            <WhyChooseUs />
+            
         </div >
     );
 }

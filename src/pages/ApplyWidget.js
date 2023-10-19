@@ -3,12 +3,15 @@ import TopHeader from './components/TopHeader';
 import Hero from './components/Hero';
 import { mainFunctions } from "../providers/MainProvider";
 import { useNavigate } from 'react-router-dom';
+import LoginWidget from './components/LoginWigdet';
+import SignUpWidget from './components/SignUpWidget';
 export default function ApplyWidget({ jobid }) {
     const navigate = useNavigate()
     const {
         job,
         company,
-        addToDocument
+        addToDocument,
+        thisuser,
     } = useContext(mainFunctions)
 
     const [formData, setFormData] = useState({
@@ -19,6 +22,7 @@ export default function ApplyWidget({ jobid }) {
         introduction: '',
         job: '',
     });
+    const [hasAccount, setHasAccount] = useState(false)
 
     const [cv, setCV] = useState({
         file: null
@@ -77,7 +81,7 @@ export default function ApplyWidget({ jobid }) {
         let tj = []
         if (typeof job !== "undefined") {
             if (job.length > 0 && typeof jobid !== "undefined") {
-                setFormData({ ...formData, job: jobid })
+                setFormData({ ...formData, job: jobid, uid: thisuser.uid })
                 tj = job.filter((this_) => {
                     if (this_.id === jobid) {
                         return true
@@ -95,7 +99,7 @@ export default function ApplyWidget({ jobid }) {
     }, [job])
     return (
         <div>
-            {thisJob.length !== 0 &&
+            {thisJob.length !== 0 && typeof thisuser.uid !== "undefined" &&
                 <div className='section_main'>
                     <div className='section_title'>Apply</div>
                     <div className='section_subtitle'>Fill the form below to apply.</div>
@@ -190,6 +194,32 @@ export default function ApplyWidget({ jobid }) {
                         </div>
                         <div onClick={()=>handleSubmit()} className="btn-primary btn">Submit</div>
                     </form>
+                </div>
+            }
+            {thisJob.length !== 0 && typeof thisuser.uid === "undefined" &&
+                <div className="admin-page d-flex-y">
+                        <h2 className='title_h2'>You are required to be signed in to apply for Job.</h2>
+                        {hasAccount &&
+                        <LoginWidget />
+                        }
+                        {!hasAccount &&
+                        <SignUpWidget />
+                        }
+                        <div
+                        onClick={()=>setHasAccount(!hasAccount)}
+                        className="login_footnote"
+                        >
+                            {hasAccount &&
+                            <>    
+                            Need an Account? Click here to register
+                            </>
+                            }
+                            {!hasAccount &&
+                            <>    
+                                Already have an account? Click here to login
+                            </>
+                            }
+                        </div>
                 </div>
             }
             {thisJob.length === 0 &&
