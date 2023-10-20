@@ -56,6 +56,7 @@ p {
     padding: 10px 10%;
     font-family: 'Montserrat', sans-serif;
     justify-content: space-between;
+    position: relative;
 }
 
 .top_header .logo {
@@ -71,11 +72,17 @@ p {
 .anchor{
     display: none;
 }
+
+.navigation{
+    display: flex;
+    align-items: center;
+}
 .top_header .nav {
     display: flex;
     width: 500px;
     justify-content: space-between;
     font-size: 12px;
+
 }
 
 .top_header .nav_item {
@@ -84,6 +91,38 @@ p {
 
 .top_header .nav_item:hover {
     font-weight: 600;
+}
+.top_header .nav2{
+    position: absolute;
+    bottom: -120px;
+    right:30px;
+    background: #fff;
+    font-family: 'montserrat';
+    font-size: 13px;
+    width: 200px
+}
+
+.top_header .nav2.smaller{
+    bottom: -85px;
+}
+.profile-name{
+    width: 30px;
+    height: 30px;
+    background: var(--grey);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.nav2 .nav-item{
+    width:100%;
+    padding: 10px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+.nav2 .nav-item:hover{
+    background: var(--grey);
 }
 
 .hero {
@@ -667,7 +706,6 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
     border: none;
     background: unset;
 }
-
 .cards .inner{
     padding: 20px 50px;
     background: white;
@@ -682,11 +720,24 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 .cards .inner .icon{
     width: 70px;
     height: 70px;
-    background: #b71540;
+    background-color: #b71540;
     border-radius: 50%;
     margin-right: 30px;
 }
 
+.icon.jobs{
+    background: url('./posting.svg');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon.trainings{
+    background: url('./presentation.svg');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .cards .inner .value{
     font-size: 30px;
     font-weight: 600;
@@ -754,6 +805,9 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
         background-position: center;
         cursor: pointer;
     }
+    .navigation{
+        display: block;
+    }
     .top_header .nav{
         position: absolute;
         background: var(--white);
@@ -772,12 +826,35 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
         background: var(--primary_color);
         color: var(--white);
     }
-    
+    .profile-name{
+        display: none !important;
+    }
+    .top_header .nav2, .top_header .nav2.smaller{
+        position: relative;
+        bottom: unset;
+        right:unset;
+        background: #fff;
+        font-family: 'montserrat';
+        font-size: 13px;
+        width: 100%
+    }
+    .hideOnMobile{
+        display: none;
+    }
+    .nav2 .nav-item{
+        width:100%;
+        background: var(--butter);
+    }
+    .nav2 .nav-item:hover{
+        background: var(--grey);
+    } 
     .showOnSmall{
         display: block !important;
     }
 
     
+
+
     .job_list .job_item .top .inner {
         display: block;
         text-align: left;

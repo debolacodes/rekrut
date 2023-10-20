@@ -38,6 +38,7 @@ export default function MainProvider(props) {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setErrorMsg(errorMessage)
             });
     }
 
@@ -48,7 +49,9 @@ export default function MainProvider(props) {
             setUser({})
             console.log("Signed out successfully")
         }).catch((error) => {
-        // An error happened.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMsg(errorMessage)
         });
     }
 
@@ -65,6 +68,7 @@ export default function MainProvider(props) {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setErrorMsg(errorMessage)
             });
     }
 
@@ -79,7 +83,9 @@ export default function MainProvider(props) {
                 });
                 setDocument(documentList);
             }
-        )
+        ).catch((err)=>{
+            setErrorMsg(err.message)
+        })
     }
 
     const getDocumentArray = async (document, setDocument = setCategory) => {
@@ -94,7 +100,9 @@ export default function MainProvider(props) {
                 });
                 setDocument(documentArray);
             }
-        )
+        ).catch((err)=>{
+            setErrorMsg(err.message)
+        })
     }
 
     const addToDocument = async (document, FORM_DATA, useStorage = false, file = "", fileName = "", folder = "cv") => {
@@ -127,13 +135,17 @@ export default function MainProvider(props) {
             })
         } else {
             console.log(FORM_DATA, document)
-            const docRef = await addDoc(
+            return addDoc(
                 collection(db, document), FORM_DATA
-            )
-            return {
-                success: true,
-                data: docRef
-            }
+            ).then(docRef =>{
+                return {
+                    success: true,
+                    data: docRef
+                }
+            }).catch((err)=>{
+                setErrorMsg(err.message)
+            })
+             
         }
     }
 

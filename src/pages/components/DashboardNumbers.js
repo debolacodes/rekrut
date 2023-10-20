@@ -21,7 +21,7 @@ export default function () {
     <div className='row cards'>
         <div className='card col-12 col-sm-6'>
             <div className='inner'>
-                <div className='icon'></div>
+                <div className='icon jobs'></div>
                 <div className='content'>
                     <div className='value'>{applications.length}</div>
                     <div className='text'>Jobs applied</div>
@@ -30,7 +30,7 @@ export default function () {
         </div>
         <div className='card col-12 col-sm-6'>
             <div className='inner'>
-                <div className='icon'></div>
+                <div className='icon trainings'></div>
                 <div className='content'>
                     <div className='value'>{registerations.length}</div>
                     <div className='text'>Trainings Registered</div>

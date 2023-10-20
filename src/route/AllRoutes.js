@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { mainFunctions } from "../providers/MainProvider";
 import Landing from '../pages/Landing'
 import '../assets/global.css'
 import JobList from '../pages/JobList'
@@ -23,7 +24,9 @@ import UserDashboard from '../pages/user/UserDashboard'
 
 
 export default function AllRoutes() {
-
+  const {
+    thisuser,
+  } = useContext(mainFunctions)
   return (
     <div className='body'>
 
@@ -34,22 +37,22 @@ export default function AllRoutes() {
         <Route exact path="/trainings" element={<Trainings />} />
         <Route exact path="/message" element={<ContactUs />} />
         <Route exact path="/services" element={<Services />} />
-        <Route exact path="/login" element={< Login />} />
-        <Route exact path="/signup" element={< SignUp />} />
+        <Route exact path="/login" element={typeof thisuser.uid === "undefined" ? < Login /> : <UserApplications/>} />
+        <Route exact path="/signup" element={typeof thisuser.uid === "undefined" ? < SignUp /> : <UserApplications/>} />
 
-        <Route exact path="/user/" element={< UserApplications />} />
-        <Route exact path="/user/applications" element={< UserApplications />} />
-        <Route exact path="/user/registerations" element={< UserRegisterations />} />
+        <Route exact path="/user/" element={typeof thisuser.uid === "undefined" ? < Login /> : < UserApplications />} />
+        <Route exact path="/user/applications" element={typeof thisuser.uid === "undefined" ? < Login /> : < UserApplications />} />
+        <Route exact path="/user/registerations" element={typeof thisuser.uid === "undefined" ? < Login /> : < UserRegisterations />} />
 
 
-        <Route exact path="/admin" element={< AdminLogin />} />
+        {/* <Route exact path="/admin" element={< AdminLogin />} />
         <Route exact path="/admin/login" element={< AdminLogin />} />
         <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
         <Route exact path="/admin/jobs" element={<AdminJobs />} />
         <Route exact path="/admin/trainings" element={<AdminTrainings />} />
         <Route exact path="/admin/applications" element={<AdminApplications />} />
         <Route exact path="/admin/registerations" element={<AdminRegisterations />} />
-        <Route exact path="/admin/messages" element={<AdminMessages />} />
+        <Route exact path="/admin/messages" element={<AdminMessages />} /> */}
 
       </Routes>
     </div>
