@@ -179,6 +179,11 @@ p {
     margin: auto;
     background: var(--grey);
 }
+input{
+    background: var(--grey) !important;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 .login-form .form-group{
     margin-top:20px;
 }
@@ -619,9 +624,10 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 .sidenav{
     width: 300px;
     height: 100vh;
-    background: #043b5c;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, #043b5c 0%, rgba(9,9,121,1) 52%);
+    background: var(--primary_color_lighter);
+    /* background: #043b5c; */
+    /* background: rgb(0,0,0);
+    background: linear-gradient(0deg, #043b5c 0%, rgba(9,9,121,1) 52%); */
     padding: 20px;
     font-family: 'montserrat';
 }
@@ -633,17 +639,21 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
 }
 .sidenav .nav-item{
     width: 100%;
-    padding: 10px;
+    padding: 10px 30px;
     text-align: center;
     background: #d4e6fc;
+    background: linear-gradient(90deg, var(--primary_color_darker) 0%, var(--primary_color) 62%);
+    color:#fff;
     margin-bottom: 5px;
     border-radius: 3px;
     border-bottom: solid #078fe4 2px;
-    cursor: pointer;
+    cursor: pointer; 
+    text-align: left !important;
 }
 
 .sidenav .nav-item:hover{
     background: var(--secondary_color);
+    color: var(--primary-color);
 }
 
 .admin_main{
@@ -848,6 +858,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(2,2,52,1) 62%);
     .nav2 .nav-item{
         width:100%;
         background: var(--butter);
+        text-align: left;
     }
     .showOnSmall{
         display: block !important;

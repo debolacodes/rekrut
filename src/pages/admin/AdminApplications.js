@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import SideNav from './components/SideNav';
 import { mainFunctions } from "../../providers/MainProvider"
 
@@ -11,20 +11,36 @@ export default function AdminApplications() {
         getDocument
     } = useContext(mainFunctions)
 
+    const [searchText, setSearchText] = useState('')
+    const [filtered, setFiltered] = useState([])
     useEffect(()=>{
         getDocument('applications', setApplications)
     },[])
-
+    useEffect(()=>{
+        const m = applications.filter((q)=>{
+          let r = typeof q.firstName !== "undefined" ? q.firstName.toString().toLowerCase() : ""
+          let s = typeof q.lastName !== "undefined" ? q.lastName.toString().toLowerCase() : ""
+          let t = typeof q.email !== "undefined" ? q.email.toString().toLowerCase() : ""
+        //   let t = q.location.toString().toLowerCase()
+          let st = searchText.toString().toLowerCase()
+          if(r.includes(st) || s.includes(st) || t.includes(st)){
+            return true
+          }else{
+            return false
+          }
+        })
+        setFiltered(m)
+    },[searchText, applications])
     return (
         <div className='admin_main'>
             <SideNav />
             <div className='admin_content'>
                 <div className='top'>
-                    <div className='title'>Jobs</div>
-                    <div className='subtitle'>This are the jobs</div>
+                    <div className='title'>Job Applications</div>
                 </div>
                 <div className='main_content'>
                 <div className='wrap-table100'>
+                <input onChange={(e)=>setSearchText(e.target.value)} placeholder="search" className='searchit'/>
                 <table>
                     <thead>
                         <tr className="table100-head">
@@ -38,7 +54,7 @@ export default function AdminApplications() {
                         </tr>
                     </thead>
                     <tbody>
-                        {applications.map((item, index)=>{
+                        {filtered.map((item, index)=>{
                         return(
                             <tr key={index}>
                                 <td className="column1">{index + 1}</td>

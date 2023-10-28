@@ -153,6 +153,7 @@ export default function MainProvider(props) {
         getDocument('category', setCategory)
         getDocument('training', setTraining)
         getDocument('jobs', setJobs)
+        getDocument('messages', setMessages)
         getDocumentArray('company', setCompany)
         getDocumentArray('jobs', setJobList)
         getDocumentArray('training', setTrainingList)

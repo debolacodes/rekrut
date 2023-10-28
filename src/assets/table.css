@@ -100,7 +100,7 @@ table {
     border-spacing: 1;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
@@ -120,8 +120,8 @@ table td,table th {
 }
 
 table thead tr {
-    height: 60px;
-    background: #36304a;
+    height: 50px;
+    background: linear-gradient(90deg, var(--tertiary_color) 0%, var(--brick_red) 62%);
 }
 
 table tbody tr {

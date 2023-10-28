@@ -4,9 +4,9 @@ import { mainFunctions } from "../../providers/MainProvider"
 export default function () {
 
     const {
-        applications,
+        userapplications,
         jobList,
-        registerations,
+        userregisterations,
         setApplications,
         getDocument,
         setRegisterations,
@@ -23,7 +23,7 @@ export default function () {
             <div className='inner'>
                 <div className='icon jobs'></div>
                 <div className='content'>
-                    <div className='value'>{applications.length - 1}</div>
+                    <div className='value'>{userapplications.length}</div>
                     <div className='text'>Jobs applied</div>
                 </div>
             </div>
@@ -32,7 +32,7 @@ export default function () {
             <div className='inner'>
                 <div className='icon trainings'></div>
                 <div className='content'>
-                    <div className='value'>{registerations.length - 1}</div>
+                    <div className='value'>{userregisterations.length}</div>
                     <div className='text'>Trainings Registered</div>
                 </div>
             </div>

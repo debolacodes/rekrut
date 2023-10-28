@@ -6,9 +6,8 @@ import DashboardNumbers from '../components/DashboardNumbers';
 export default function UserDashboard() {
     
     const {
-        applications,
+        userapplications,
         jobList,
-        registerations,
         setApplications,
         getDocument,
         setRegisterations
@@ -45,7 +44,7 @@ export default function UserDashboard() {
                         </tr>
                     </thead>
                     <tbody>
-                        {applications.map((item, index)=>{
+                        {userapplications.map((item, index)=>{
                         return(
                             <tr key={index}>
                                 <td className="column1">{index + 1}</td>

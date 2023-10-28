@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import SideNav from './components/SideNav';
 import { mainFunctions } from "../../providers/MainProvider";
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,24 @@ export default function AdminRegisterations() {
         setRegisterations,
         getDocument
     } = useContext(mainFunctions)
+    const [searchText, setSearchText] = useState('')
+    const [filtered, setFiltered] = useState([])
+    useEffect(()=>{
+        const m = registerations.filter((q)=>{
+          let r = typeof q.firstName !== "undefined" ? q.firstName.toString().toLowerCase() : ""
+          let s = typeof q.lastName !== "undefined" ? q.lastName.toString().toLowerCase() : ""
+          let t = typeof q.email !== "undefined" ? q.email.toString().toLowerCase() : ""
+          let u = typeof trainingList[q.training] !== "undefined" ? trainingList[q.training].title.toString().toLowerCase() : ""
+        //   let t = q.location.toString().toLowerCase()
+          let st = searchText.toString().toLowerCase()
+          if(r.includes(st) || s.includes(st) || t.includes(st) || u.includes(st)){
+            return true
+          }else{
+            return false
+          }
+        })
+        setFiltered(m)
+    },[searchText, registerations, trainingList])
 
     useEffect(()=>{
         getDocument('registerations', setRegisterations)
@@ -24,18 +42,19 @@ export default function AdminRegisterations() {
                 </div>
                 <div className='main_content'>
                 <div className='wrap-table100'>
+                <input onChange={(e)=>setSearchText(e.target.value)} placeholder="search" className='searchit'/>
                 <table>
                     <thead>
                         <tr className="table100-head">
                             <th className="column1">S/N</th>
-                            <th className="column2">Firstname</th>
-                            <th className="column3">Lastname</th>
+                            <th className="column2">Training</th>
+                            <th className="column3">Name</th>
                             <th className="column4">Email</th>
                             <th className="column5">Phone</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {registerations.map((item, index)=>{
+                        {filtered.map((item, index)=>{
                         return(
                             <tr key={index}>
                                 <td className="column1">{index + 1}</td>

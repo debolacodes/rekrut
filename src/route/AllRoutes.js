@@ -29,7 +29,6 @@ export default function AllRoutes() {
   } = useContext(mainFunctions)
   return (
     <div className='body'>
-
       <Routes>
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/jobs" element={<JobList />} />
@@ -45,14 +44,14 @@ export default function AllRoutes() {
         <Route exact path="/user/registerations" element={typeof thisuser.uid === "undefined" ? < Login /> : < UserRegisterations />} />
 
 
-        {/* <Route exact path="/admin" element={< AdminLogin />} />
-        <Route exact path="/admin/login" element={< AdminLogin />} />
-        <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route exact path="/admin/jobs" element={<AdminJobs />} />
-        <Route exact path="/admin/trainings" element={<AdminTrainings />} />
-        <Route exact path="/admin/applications" element={<AdminApplications />} />
-        <Route exact path="/admin/registerations" element={<AdminRegisterations />} />
-        <Route exact path="/admin/messages" element={<AdminMessages />} /> */}
+        <Route exact path="/admin" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ?<AdminDashboard />: < AdminLogin />} />
+        <Route exact path="/admin/login" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ?<AdminDashboard />: < AdminLogin />} />
+        <Route exact path="/admin/dashboard" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ? <AdminDashboard /> : < AdminLogin />} />
+        <Route exact path="/admin/jobs" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ? <AdminJobs /> : < AdminLogin /> }/>
+        <Route exact path="/admin/trainings" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ?<AdminTrainings /> :< AdminLogin /> } />
+        <Route exact path="/admin/applications" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ?<AdminApplications /> :< AdminLogin />} />
+        <Route exact path="/admin/registerations" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ? <AdminRegisterations /> :< AdminLogin />} />
+        <Route exact path="/admin/messages" element={typeof thisuser.uid !== "undefined" && thisuser.email === "adewunmioreo@gmail.com" ? <AdminMessages />:< AdminLogin /> } />
 
       </Routes>
     </div>
