@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import MainProvider from './providers/MainProvider';
-import { ToastContainer} from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <MainProvider>
-        
+    <HashRouter>
+      <MainProvider>   
           <App />
       </MainProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
