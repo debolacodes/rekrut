@@ -23,7 +23,7 @@ export default function () {
             <div className='inner'>
                 <div className='icon jobs'></div>
                 <div className='content'>
-                    <div className='value'>{applications.length}</div>
+                    <div className='value'>{applications.length - 1}</div>
                     <div className='text'>Jobs applied</div>
                 </div>
             </div>
@@ -32,7 +32,7 @@ export default function () {
             <div className='inner'>
                 <div className='icon trainings'></div>
                 <div className='content'>
-                    <div className='value'>{registerations.length}</div>
+                    <div className='value'>{registerations.length - 1}</div>
                     <div className='text'>Trainings Registered</div>
                 </div>
             </div>
